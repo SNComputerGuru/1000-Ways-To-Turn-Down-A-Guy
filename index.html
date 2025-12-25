@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>1000+ Ways to Turn Down A Guy</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>1000+ Ways to Turn Down A Guy</h1>
+    <p class="subtitle">Powered by No-as-a-Service</p>
+
+    <div id="card">
+      <p id="rejection">Click the button to get a rejection...</p>
+    </div>
+
+    <button id="btn">Give me another one</button>
+<br>
+  </main>
+
+    <main class="rando">
+      <p><strong>Random Question Every 6 seconds:
+      </strong></p>
+    <p id="random-question">
+    </p>
+    </main>
+
+  <script src="index.js"></script>
+  <script>
+  async function loadQuestions() {
+    try {
+      const response = await fetch('questions.json');
+      const data = await response.json();
+      return data.questions;
+    } catch (error) {
+      console.error('Error loading questions:', error);
+      return [];
+    }
+  }
+
+  function getRandomQuestion(questions) {
+    const randomIndex = Math.floor(Math.random() * questions.length);
+    return questions[randomIndex];
+  }
+
+  async function startRandomQuestions() {
+    const questions = await loadQuestions();
+    const questionElement = document.getElementById('random-question');
+
+    if (questions.length === 0) {
+      questionElement.textContent = 'No questions found.';
+      return;
+    }
+
+    questionElement.textContent = getRandomQuestion(questions);
+
+    setInterval(() => {
+      questionElement.textContent = getRandomQuestion(questions);
+    }, 6000);
+  }
+
+  startRandomQuestions();
+</script>
+</body>
+</html>
