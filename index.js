@@ -16,10 +16,10 @@ getRejectionButton.addEventListener("click", () => {
     fetch(finalURL)
       .then(res => res.json())
       .then(data => {
-        rejectionBox.textContent = data.reason || "Failed to get reason, try again or just tell them NO!";
+        rejectionBox.textContent = data.reason || "Failed to get reason, try again or just tell him NO!";
       })
       .catch(() => {
-        rejectionBox.textContent = "Failed to get reason, try again or just tell them NO!";
+        rejectionBox.textContent = "Failed to get reason, try again or just tell him NO!";
       })
       .finally(() => {
         getRejectionButton.disabled = false;
