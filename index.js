@@ -2,7 +2,7 @@ let rejectionBox = document.getElementById("rejection");
 let getRejectionButton = document.getElementById("btn");
 
 const apiURL = "https://naas.isalman.dev/no";
-const proxyURL = "https://corsproxy.io/?";
+const proxyURL = "https://api.codetabs.com/v1/proxy?quest=";
 const counterEndpoint = "https://api.counterapi.dev/v2/ndivho-shillings-team-2268/1000buttoncounterb/up";
 
 getRejectionButton.addEventListener("click", () => {
