@@ -20,7 +20,7 @@
   </main>
 
     <main class="rando">
-      <p><strong>Random Question Every 6 seconds:
+      <p><strong>Random Question Every 5 seconds:
       </strong></p>
     <p id="random-question">
     </p>
@@ -57,7 +57,7 @@
 
     setInterval(() => {
       questionElement.textContent = getRandomQuestion(questions);
-    }, 6000);
+    }, 5000);
   }
 
   startRandomQuestions();
